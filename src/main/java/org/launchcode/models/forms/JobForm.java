@@ -27,6 +27,15 @@ public class JobForm {
         with correct validation attributes and display names.
         Don't forget to add getters and setters
      */
+    @NotNull
+    private String location;
+
+    @NotNull
+    private String skill;
+
+    @NotNull
+    private String positionType;
+
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
@@ -42,6 +51,12 @@ public class JobForm {
         */
 
         employers = jobData.getEmployers().findAll();
+
+        locations = jobData.getLocations().findAll();
+
+        coreCompetencies = jobData.getCoreCompetencies().findAll();
+
+        positionTypes = jobData.getPositionTypes().findAll();
 
     }
 
@@ -59,6 +74,30 @@ public class JobForm {
 
     public void setEmployerId(int employerId) {
         this.employerId = employerId;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getSkill() {
+        return skill;
+    }
+
+    public void setSkill(String skill) {
+        this.skill = skill;
+    }
+
+    public String getPositionType() {
+        return positionType;
+    }
+
+    public void setPositionType(String positionType) {
+        this.positionType = positionType;
     }
 
     public ArrayList<Employer> getEmployers() {
